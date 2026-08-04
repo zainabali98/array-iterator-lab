@@ -1,0 +1,15 @@
+lesson 5
+
+
+flexbox and its elements (always in the container)
+
+  1. display: flex;
+
+  2. flex-direction: row;
+
+  3. justify-content: center;
+  4. align-items: flex-start;
+  5. gap: 50px;
+  6. flex-wrap: wrap;
+
+

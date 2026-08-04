@@ -1,0 +1,67 @@
+/*-------------------------------- Constants --------------------------------*/
+const choices = ['rock','paper','scissors']
+/*-------------------------------- Variables --------------------------------*/
+let playerChoice = null
+let computerChoice = null
+let message = null
+/*------------------------ Cached Element References ------------------------*/
+
+const allChoiceElements = document.querySelectorAll('.choice-el')
+const resultDisplayElement = document.querySelector('#result-display')
+
+/*-------------------------------- Functions --------------------------------*/
+
+function getPlayerChoice(event){
+ // 1. save the user choice in the playerChoice variable
+    playerChoice = event.target.id
+}
+
+function getComputerChoice(){
+    // 2. generate the computer choice at random
+    // console.log(Math.random() * 3)
+    computerChoice = choices[Math.floor(Math.random() * 3)]
+
+}
+
+function compare(){
+
+    // 3. compare the choices and decide who wins
+    if(playerChoice === computerChoice){
+        message = `<b>DRAW</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
+    }
+    else if(playerChoice === 'rock' && computerChoice === 'scissors'){
+        message = `You <b class="win">Win</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
+    }
+    else if(playerChoice === 'paper' && computerChoice === 'rock'){
+        message = `You <b class="win">Win</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
+    }
+    else if(playerChoice === 'scissors' && computerChoice=== 'paper'){
+        message = `You <b class="win">Win</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
+    }
+    else{
+        message = `You <b class="lose">Lose</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
+
+    }
+
+}
+
+function displayWinner(){
+
+    // 4. show the result /// .innerHTML makes ma able to style via JS.
+    resultDisplayElement.innerHTML = message
+}
+
+function play(event){
+   getPlayerChoice(event)
+   getComputerChoice()
+   compare()
+   displayWinner()
+
+
+
+}
+/*----------------------------- Event Listeners -----------------------------*/
+
+for(let oneChoiceElement of allChoiceElements){
+    oneChoiceElement.addEventListener('click',play)
+}

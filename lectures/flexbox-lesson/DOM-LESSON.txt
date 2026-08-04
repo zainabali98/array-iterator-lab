@@ -1,0 +1,12 @@
+DOM-LESSON
+
+step by step:
+
+1. caching the element: writing an object
+	- const (anyName) = document.querySelector('#main-title) or ('#.class')
+
+
+2. addEventListener(..., ..).
+
+
+3. 

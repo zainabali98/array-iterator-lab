@@ -1,0 +1,11 @@
+how does random actually works in programming?
+
+
+  
+
+const isShoppingCartValid = shoppingCart.every((oneItem) => {return oneItem.shipsToBahrain})
+
+console.log(isShoppingCartValid)
+
+
+use this for tic-tac-toe winner & tie
